@@ -26,6 +26,12 @@
       <div class="hero__plane hero__plane--one" aria-hidden="true"></div>
       <div class="hero__plane hero__plane--two" aria-hidden="true"></div>
       <div class="hero__plane hero__plane--three" aria-hidden="true"></div>
+<nav class="site-nav shell" aria-label="Основна навігація">
+        <a href="#services">Напрями</a>
+        <a href="#approach">Підхід</a>
+        <a href="#markets">Ринки</a>
+        <a href="#contact" class="site-nav__contact">Зв’язатися <span aria-hidden="true">↗</span></a>
+      </nav>
       <div class="hero__glass shell" id="hero-glass">
         <span class="hero__glass-light" aria-hidden="true"></span>
         <img class="hero__logo" src="./public/assets/logo.svg" alt="DISCOURSE" width="469" height="188" fetchpriority="high" />
@@ -54,6 +60,26 @@
           <path d="M-8 0 H349 C382 0 378 37 412 37 H604 C638 37 634 0 667 0 H1024" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <div class="sky__grain" aria-hidden="true"></div>
+        <div class="sky__composition shell">
+          <div class="sky__message" data-reveal>
+            <span class="sky__index">01 / НАША ЛОГІКА</span>
+            <h2>Спочатку<br /><span>розуміємо.</span><br />Потім діємо.</h2>
+            <p>Не починаємо з інструментів. Спочатку з’ясовуємо, що саме має змінитися в бізнесі.</p>
+          </div>
+          <div class="sky__object" id="sky-object" aria-hidden="true">
+            <div class="sky__object-shadow"></div>
+            <div class="sky__orbit sky__orbit--outer"></div>
+            <div class="sky__orbit sky__orbit--inner"></div>
+            <div class="sky__plate sky__plate--back"></div>
+            <div class="sky__plate sky__plate--mid"></div>
+            <div class="sky__plate sky__plate--front">
+              <span class="sky__plate-rim"></span>
+              <span class="sky__plate-mark">D<span>·</span>C</span>
+              <span class="sky__plate-caption">DIRECTION / CONTEXT</span>
+            </div>
+            <span class="sky__object-flash"></span>
+          </div>
+        </div>
       </section>
 
       <section class="mosaic" id="services" aria-label="Напрями роботи DISCOURSE">
@@ -88,6 +114,57 @@
         </div>
       </section>
 
+      <section class="approach" id="approach" aria-labelledby="approach-title">
+        <div class="approach__heading shell" data-reveal>
+          <p class="section-tag">02 / ПІДХІД</p>
+          <h2 id="approach-title">Не робимо маркетинг<br /><em>навмання.</em></h2>
+          <p>Кожне рішення має відповідати конкретній задачі. Ось як ми до нього приходимо.</p>
+        </div>
+        <div class="approach__steps shell">
+          <article class="approach__step" data-reveal>
+            <span class="approach__number">01</span>
+            <h3>Знаходимо суть</h3>
+            <p>Розбираємо бізнес, продукт, аудиторію й конкуренцію. Не приймаємо припущення за факти.</p>
+            <span class="approach__glyph" aria-hidden="true">↗</span>
+          </article>
+          <article class="approach__step" data-reveal>
+            <span class="approach__number">02</span>
+            <h3>Будуємо систему</h3>
+            <p>Визначаємо пріоритети, повідомлення, канали та послідовність дій. Без хаотичних запусків.</p>
+            <span class="approach__glyph" aria-hidden="true">↗</span>
+          </article>
+          <article class="approach__step" data-reveal>
+            <span class="approach__number">03</span>
+            <h3>Перевіряємо діями</h3>
+            <p>Запускаємо, дивимося на результат і коригуємо те, що не працює. Рішення живуть у реальності.</p>
+            <span class="approach__glyph" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="markets" id="markets" aria-labelledby="markets-title">
+        <div class="markets__inner shell">
+          <div class="markets__visual" aria-hidden="true">
+            <div class="markets__grid"></div>
+            <span class="markets__circle markets__circle--one"></span>
+            <span class="markets__circle markets__circle--two"></span>
+            <span class="markets__line markets__line--one"></span>
+            <span class="markets__line markets__line--two"></span>
+            <span class="markets__node markets__node--one"></span>
+            <span class="markets__node markets__node--two"></span>
+            <span class="markets__node markets__node--three"></span>
+            <span class="markets__coordinates">50°N / 30°E</span>
+            <span class="markets__signal">КОНТЕКСТ ВАЖЛИВИЙ</span>
+          </div>
+          <div class="markets__text" data-reveal>
+            <p class="section-tag">03 / РИНКИ</p>
+            <h2 id="markets-title">Новий ринок —<br />не просто нова<br /><em>мова реклами.</em></h2>
+            <p>Українському бізнесу за кордоном недостатньо перекласти повідомлення. Те, що працює в одній країні, може не спрацювати в іншій. Враховуємо локальні звички, конкуренцію та очікування людей.</p>
+            <a class="text-link" href="#contact">Поговоримо про ваш ринок <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="contact__inner shell">
           <p class="contact__eyebrow">DISCOURSE / ЗВ’ЯЗОК</p>
@@ -108,7 +185,11 @@
     <footer class="footer">
       <div class="footer__inner shell">
         <a href="#top" aria-label="DISCOURSE — повернутися на початок">DISCOURSE</a>
-        <span>Маркетингова агенція повного циклу</span>
+        <nav aria-label="Навігація внизу сторінки">
+          <a href="#services">Послуги</a>
+          <a href="#approach">Підхід</a>
+          <a href="#markets">Ринки</a>
+        </nav>
         <span id="copyright-year">2026</span>
       </div>
     </footer>

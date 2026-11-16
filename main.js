@@ -114,6 +114,47 @@
     });
   }
 
+
+  // Editorial reveal animations never hide content if script or observer is unavailable.
+  if (!motionReduced && 'IntersectionObserver' in window) {
+    document.querySelectorAll('[data-reveal]').forEach(function (el) {
+      el.classList.add('is-in-view');
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin:'0px 0px -10% 0px', threshold:.08 });
+    var targets = document.querySelectorAll('[data-reveal]');
+    targets.forEach(function (target) { observer.observe(target); });
+    // Do not apply initial hiding: preserves content visibility during navigation and loads.
+  }
+
+  // Small, GPU-only depth shift for the custom acrylic form, bounded to its section.
+  var sky = document.querySelector('.sky');
+  var object = document.getElementById('sky-object');
+  if (sky && object && !motionReduced && window.matchMedia('(pointer:fine)').matches) {
+    var skyFrame = 0;
+    var skyX = 0, skyY = 0;
+    sky.addEventListener('pointermove', function (event) {
+      var box = sky.getBoundingClientRect();
+      skyX = ((event.clientX - box.left) / box.width - .5) * 15;
+      skyY = ((event.clientY - box.top) / box.height - .5) * 13;
+      if (!skyFrame) skyFrame = requestAnimationFrame(function () {
+        skyFrame = 0;
+        object.style.setProperty('--object-x', skyX.toFixed(1) + 'px');
+        object.style.setProperty('--object-y', skyY.toFixed(1) + 'px');
+      });
+    }, {passive:true});
+    sky.addEventListener('pointerleave', function () {
+      object.style.setProperty('--object-x','0px');
+      object.style.setProperty('--object-y','0px');
+    });
+  }
+
   var year = document.getElementById('copyright-year');
   if (year) year.textContent = new Date().getFullYear();
 })();

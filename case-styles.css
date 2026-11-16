@@ -285,3 +285,9 @@ body.case-document .wide{width:min(1350px,calc(100% - 90px));margin-inline:auto}
  .crm-art__top strong{font-size:37px}
  .materials-art__sheet b{font-size:25px}
 }
+
+
+/* More breathing room on editorial content screens */
+.case-context__grid div[data-motion],.case-process__row{scroll-margin-top:40px}
+@media(min-width:1050px){.case-hero__media .bespoke-art{min-height:490px}}
+@media(hover:none){.portfolio-card:hover,.case-fragment:hover{transform:none}}

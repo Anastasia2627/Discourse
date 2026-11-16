@@ -76,12 +76,12 @@
   '<section class="case-section case-context"><div class="wide"><span class="case-section__eyebrow">01 / СИТУАЦІЯ</span><h2>'+esc(current.about)+'</h2>'+
   '<div class="case-context__grid"><div data-motion><h3>ЗАДАЧА</h3><p>'+esc(current.challenge)+'</p></div><div data-motion><h3>НАШ ПІДХІД</h3><p>'+esc(current.answer)+'</p></div></div></div></section>'+
   '<section class="case-section case-impact"><div class="wide"><span class="case-section__eyebrow">02 / ЩО МОЖНА ПОКАЗАТИ</span>'+
-  '<h2>'+((current.slug==="merkushyna"||current.slug==="evolving-prowess")?'Результати, які можна перевірити.':'Робота в конкретних форматах.')+'</h2>'+
+  '<h2>'+((current.slug==="merkushyna"||current.slug==="evolving-prowess")?'Проєкт у цифрах.':'Що увійшло в роботу.')+'</h2>'+
   '<div class="case-metrics" data-motion>'+metrics+'</div></div></section>'+
   '<section class="case-section case-process"><div class="wide"><span class="case-section__eyebrow">03 / РІШЕННЯ</span><h2>Від задачі<br>до реалізації.</h2>'+phases+'</div></section>'+
   '<section class="case-section case-gallery"><div class="wide"><span class="case-section__eyebrow">04 / ВІЗУАЛЬНА СИСТЕМА</span>'+
-  '<div class="case-gallery__heading"><h2>Контент має<br>свій характер.</h2><p>Типографічні композиції, створені для цієї сторінки на основі тем та стилістики наданих проєктних матеріалів.</p></div>'+
-  '<div class="case-fragments">'+fragments+'</div><p class="case-note">'+esc(current.note)+'</p></div></section>'+comparison+
+  '<div class="case-gallery__heading"><h2>Контент має<br>свій характер.</h2><p>Приклади тем, форматів і візуальних рішень, на яких тримається комунікація.</p></div>'+
+  '<div class="case-fragments">'+fragments+'</div></div></section>'+comparison+
   '<section class="case-next"><div class="wide case-next__inner"><div><span class="case-section__eyebrow">НАСТУПНИЙ ПРОЄКТ</span><h2>'+esc(next.title)+'</h2><a href="'+esc(next.slug)+'.html">Переглянути кейс <span aria-hidden="true">↗</span></a></div>'+
   '<a href="index.html" style="background:#eef3ff;color:#1741d8">Усі кейси <span aria-hidden="true">↗</span></a></div></section>';
  document.dispatchEvent(new Event("discourse:content-ready"));

@@ -14,7 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./case-styles.css" />
   <script src="./main.js" defer></script>
+  <script src="./case-data.js" defer></script>
+  <script src="./case-render.js" defer></script>
+  <script type="module" src="./motion-enhancements.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до вмісту</a>
@@ -29,6 +33,7 @@
       <div class="hero__plane hero__plane--three" aria-hidden="true"></div>
 <nav class="site-nav shell" aria-label="Основна навігація">
         <a href="#services">Напрями</a>
+        <a href="#work">Кейси</a>
         <a href="#approach">Підхід</a>
         <a href="#markets">Ринки</a>
         <a href="#contact" class="site-nav__contact">Зв’язатися <span aria-hidden="true">↗</span></a>
@@ -114,6 +119,23 @@
         </div>
       </section>
 
+      <section class="selected-work" id="work" aria-labelledby="work-title">
+        <div class="selected-work__wrap shell">
+          <div class="selected-work__intro" data-motion>
+            <span class="selected-work__eyebrow">DISCOURSE / ДОСВІД</span>
+            <h2 id="work-title">Роботи, за якими<br>стоїть <em>зміст.</em></h2>
+            <p>Від спортивного особистого бренду до e-commerce й виходу на новий ринок. Кожен проєкт — своя задача, своя логіка, свій результат.</p>
+          </div>
+        </div>
+        <div class="selected-work__cards shell portfolio-list" data-work-list data-limit="4">
+          <a href="cases/index.html">Переглянути кейси</a>
+        </div>
+        <div class="selected-work__more shell">
+          <a href="cases/index.html">Усі кейси <span aria-hidden="true">↗</span></a>
+          <span>07 / проєктів і напрямів роботи</span>
+        </div>
+      </section>
+
       <section class="approach" id="approach" aria-labelledby="approach-title">
         <div class="approach__heading shell" data-reveal>
           <p class="section-tag">02 / ПІДХІД</p>
@@ -185,6 +207,7 @@
         <a href="#top" aria-label="DISCOURSE — повернутися на початок">DISCOURSE</a>
         <nav aria-label="Навігація внизу сторінки">
           <a href="#services">Послуги</a>
+          <a href="#work">Кейси</a>
           <a href="#approach">Підхід</a>
           <a href="#markets">Ринки</a>
         </nav>

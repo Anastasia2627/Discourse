@@ -444,16 +444,10 @@ a { color: inherit; text-decoration: none; }
   position:absolute; inset:8%; border-radius:28%;
   border:1px solid rgba(255,255,255,.33);
 }
-.sky__plate-mark {
-  color:#0640ba; font-weight:900; font-size:clamp(86px,12vw,190px);
-  line-height:1; letter-spacing:-.14em; transform:skewY(8deg) rotate(26deg);
-  text-shadow:2px 3px 0 rgba(255,255,255,.13);
-}
-.sky__plate-mark span { color:rgba(255,255,255,.78); }
-.sky__plate-caption {
-  margin-top:14px; font-size:clamp(8px,.75vw,11px); font-weight:700;
-  letter-spacing:.09em; color:rgba(1,41,117,.8);
+.sky__plate-logo {
+  width:67%; height:auto; display:block;
   transform:skewY(8deg) rotate(26deg);
+  filter:drop-shadow(0 5px 9px rgba(0,57,149,.1));
 }
 .sky__object-flash {
   position:absolute; top:15%; right:7%; width:9px; height:9px; border-radius:50%;
@@ -574,9 +568,6 @@ a { color: inherit; text-decoration: none; }
 .markets__node--one { top:18%; left:66%; }
 .markets__node--two { top:65%; left:20%; }
 .markets__node--three { top:48%; left:50%; background:#fff; }
-.markets__coordinates,.markets__signal { position:absolute; font-weight:700; font-size:clamp(9px,.85vw,12px); letter-spacing:.12em; color:#b8d6ff; }
-.markets__coordinates { top:18%; left:2%; }
-.markets__signal { right:0; bottom:15%; }
 @keyframes market-rotation { to { transform:rotate(360deg); } }
 
 [data-reveal] { transition:opacity .9s var(--ease),transform .9s var(--ease); }
@@ -592,7 +583,6 @@ html.motion-ready [data-reveal].is-in-view { opacity:1; transform:translateY(0);
   .sky__composition { grid-template-columns:1fr 1fr; }
   .sky__message h2 { font-size:clamp(31px,5.3vw,45px); }
   .sky__message p { max-width:240px; font-size:12px; }
-  .sky__plate-mark { font-size:clamp(65px,11vw,110px); }
   .approach__step { grid-template-columns:35px minmax(160px,1fr) minmax(150px,1fr) 19px; gap:18px; }
   .markets__inner { gap:5%; }
   .markets h2 { font-size:clamp(31px,4.6vw,49px); }
@@ -610,8 +600,6 @@ html.motion-ready [data-reveal].is-in-view { opacity:1; transform:translateY(0);
   .sky__message h2 { font-size:clamp(34px,8vw,44px); }
   .sky__message p { margin:13px auto 0; max-width:280px; font-size:11px; line-height:1.45; }
   .sky__object { position:absolute; width:min(86vw,340px); left:50%; bottom:-75px; margin:0; transform:translateX(-50%); opacity:.94; }
-  .sky__plate-mark { font-size:clamp(74px,22vw,100px); }
-  .sky__plate-caption { font-size:7px; }
   .sky__object-flash { display:none; }
   .mosaic-card__copy strong { font-size:clamp(16px,5vw,19px); }
   .mosaic-card--identity .mosaic-card__copy strong { font-size:16px; }
@@ -631,7 +619,6 @@ html.motion-ready [data-reveal].is-in-view { opacity:1; transform:translateY(0);
   .markets h2 { font-size:clamp(36px,9vw,49px); }
   .markets__text > p:not(.section-tag) { font-size:13px; margin:20px auto 24px; }
   .markets__visual { width:min(78vw,320px); margin:auto; }
-  .markets__coordinates,.markets__signal { font-size:8px; }
   .footer__inner nav { gap:15px; order:3; width:100%; justify-content:center; }
 }
 @media (max-width:365px) {

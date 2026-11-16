@@ -6,12 +6,43 @@
  const folder=document.body.classList.contains("case-document")?"":"cases/";
  function esc(value){return String(value).replace(/[&<>"']/g,s=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[s]));}
  function artwork(c){
-   const tiny=c.slug==="merkushyna"?"RACE / PERSON":c.slug==="evolving-prowess"?"SIZE EVOLUTION":c.slug==="yurchak"?"THE FIT":c.slug==="face-atelier"?"SKIN SESSION":c.slug==="bezpeka-shop"?"CONTROL":c.slug==="cleaning-crm"?"FOR CLEANERS":"DESIGN SYSTEM";
-   return '<div class="portfolio-art portfolio-art--'+esc(c.skin)+'" aria-hidden="true">'+
-      '<span class="portfolio-art__orb"></span><span class="portfolio-art__head">'+esc(c.title.toUpperCase())+'</span><span class="portfolio-art__stripe"></span>'+
-      '<span class="portfolio-art__phone portfolio-art__phone--left"><span class="portfolio-art__phone-inner"><span class="portfolio-art__mark">'+esc(tiny)+'</span><span class="portfolio-art__micro">'+esc(c.fragments[0][1])+'</span><span class="portfolio-art__line"></span><span class="portfolio-art__line portfolio-art__line--short"></span></span></span>'+
-      '<span class="portfolio-art__phone portfolio-art__phone--right"><span class="portfolio-art__phone-inner"><span class="portfolio-art__mark">'+esc(c.fragments[1][0])+'</span><span class="portfolio-art__micro">'+esc(c.fragments[2][1])+'</span><span class="portfolio-art__line"></span><span class="portfolio-art__line portfolio-art__line--short"></span></span></span>'+
-      '<span class="portfolio-art__mini">'+esc(c.kicker.toUpperCase())+'</span></div>';
+  const skin=esc(c.skin),title=esc(c.title.toUpperCase());
+  const open='<div class="portfolio-art portfolio-art--'+skin+' bespoke-art bespoke-art--'+skin+'" aria-hidden="true">';
+  const end='</div>';
+  if(c.skin==="sport")return open+
+    '<span class="bespoke-art__grid"></span><span class="bespoke-art__small">PERSONAL BRAND / SPORT</span>'+
+    '<strong class="sport-art__headline">MER<br>KUSHY<br>NA</strong>'+
+    '<span class="sport-art__track sport-art__track--one"></span><span class="sport-art__track sport-art__track--two"></span>'+
+    '<div class="sport-art__athlete"><span></span></div>'+
+    '<div class="sport-art__metric"><strong>+74%</strong><small>АУДИТОРІЯ</small></div>'+end;
+  if(c.skin==="active")return open+
+    '<span class="bespoke-art__small">ACTIVEWEAR / CANADA</span>'+
+    '<div class="active-art__poster"><span>SIZE</span><strong>EVOLUTION</strong><em>activewear that evolves with you</em>'+
+    '<div class="active-art__sizes"><span>60</span><span>80</span><span>100</span></div></div>'+
+    '<div class="active-art__secondary">not a size.<br><strong>a journey.</strong></div>'+end;
+  if(c.skin==="fashion")return open+
+    '<span class="bespoke-art__small">YURCHAK / E-COMMERCE</span><div class="fashion-art__window">'+
+    '<span class="fashion-art__brand">YURCHAK</span><span class="fashion-art__menu">SHOP&nbsp;&nbsp;&nbsp; STORY&nbsp;&nbsp;&nbsp; FIT</span>'+
+    '<div class="fashion-art__products"><span>01 / NEW EDIT</span><span>02 / MOVEMENT</span><span>03 / THE FIT</span></div>'+
+    '<span class="fashion-art__bottom">DESIGNED TO MOVE</span></div><div class="fashion-art__label">CIRCLE<br><b>Bestie / Muse / Icon</b></div>'+end;
+  if(c.skin==="beauty")return open+
+    '<span class="bespoke-art__small">FACE ATELIER / BARCELONA</span><div class="beauty-art__tiles">'+
+    '<div class="beauty-art__tile beauty-art__tile--a"><em>FA</em><small>Atelier</small></div>'+
+    '<div class="beauty-art__tile beauty-art__tile--b"><b>CARE<br>COLLECTION</b><span>01 / SKIN</span></div>'+
+    '<div class="beauty-art__tile beauty-art__tile--c"><b>WONDER<br>FACE</b><span>02 / EXPERIENCE</span></div>'+
+    '<div class="beauty-art__tile beauty-art__tile--d"><em>BCN</em><span>BEAUTY SPACE</span></div></div>'+end;
+  if(c.skin==="security")return open+
+    '<span class="bespoke-art__small">BEZPEKA SHOP / SECURITY</span><span class="security-art__headline">ПІД<br>КОНТРОЛЕМ.</span>'+
+    '<div class="security-art__device"><div class="security-art__lens"><span></span></div></div>'+
+    '<span class="security-art__guide">01 / VIDEO&nbsp;&nbsp; 02 / ACCESS&nbsp;&nbsp; 03 / ALARM</span>'+end;
+  if(c.skin==="crm")return open+
+    '<span class="bespoke-art__small">B2B / CLEANING SYSTEM</span><div class="crm-art__dashboard">'+
+    '<div class="crm-art__top"><span>CLEANERS</span><strong>CRM</strong></div><div class="crm-art__columns"><div><strong>BOOKINGS</strong><span></span><span></span><span></span></div><div><strong>WORKFLOW</strong><span></span><span></span><span></span></div></div>'+
+    '<div class="crm-art__foot">ONE SYSTEM. LESS CHAOS.</div></div><span class="crm-art__floating">GROWTH<br>NEEDS<br><b>STRUCTURE</b></span>'+end;
+  return open+
+    '<span class="bespoke-art__small">DIGITAL / EDITORIAL DESIGN</span><div class="materials-art__sheet materials-art__sheet--a"><b>AUDIT</b><span>PROFILE / ANALYSIS</span></div>'+
+    '<div class="materials-art__sheet materials-art__sheet--b"><b>WORKBOOK</b><span>SALES / FRAMEWORK</span></div>'+
+    '<div class="materials-art__sheet materials-art__sheet--c"><b>DECK</b><span>STRATEGY / PRESENTATION</span></div>'+end;
  }
  function portfolioCard(c){
    return '<a class="portfolio-card" href="'+folder+esc(c.slug)+'.html" aria-label="Переглянути кейс '+esc(c.title)+'">'+

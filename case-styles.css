@@ -205,3 +205,83 @@ body.case-document .wide{width:min(1350px,calc(100% - 90px));margin-inline:auto}
  .case-fragment,.portfolio-card,.portfolio-art__phone{transition:none}
  .case-chart__bar span{animation:none}
 }
+
+
+/* Each project has its own visual grammar rather than repeated phone mockups. */
+.bespoke-art{display:block;isolation:isolate}
+.bespoke-art__small{position:absolute;top:8%;left:8%;font-weight:800;font-size:clamp(9px,1vw,13px);letter-spacing:.14em;z-index:4}
+.bespoke-art__grid{position:absolute;inset:0;opacity:.19;background-image:linear-gradient(white 1px,transparent 1px),linear-gradient(90deg,white 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(90deg,transparent,#000)}
+.sport-art__headline{position:absolute;left:6%;top:21%;font-size:clamp(48px,7.1vw,112px);font-weight:900;line-height:.82;letter-spacing:-.09em;z-index:1;opacity:.9}
+.sport-art__track{position:absolute;width:128%;height:3px;background:rgba(222,243,255,.65);transform:rotate(-34deg);transform-origin:left;left:-14%;top:75%;box-shadow:0 13px 0 rgba(222,243,255,.18)}
+.sport-art__track--two{top:83%;background:rgba(65,201,255,.8)}
+.sport-art__athlete{position:absolute;right:19%;top:18%;width:22%;height:74%;transform:skewY(-7deg) rotate(13deg);background:linear-gradient(120deg,#e9f9ff 0%,#2f8bd6 31%,#031c57 34%,#02234c 75%,#98cbe8 79%);border-radius:56% 50% 10% 7%;box-shadow:20px 12px 40px rgba(0,12,61,.3)}
+.sport-art__athlete:before{content:"";position:absolute;width:48%;aspect-ratio:1;left:19%;top:-8%;border-radius:50%;background:linear-gradient(50deg,#fff,#128de3)}
+.sport-art__athlete:after{content:"";position:absolute;width:170%;height:9px;background:#031b51;top:50%;left:-34%;transform:rotate(45deg);box-shadow:1px 6px 0 rgba(235,247,255,.75)}
+.sport-art__metric{position:absolute;z-index:5;right:6%;bottom:8%;text-align:right}
+.sport-art__metric strong{font-size:clamp(36px,5vw,76px);line-height:1;display:block;letter-spacing:-.06em}
+.sport-art__metric small{font-size:10px;letter-spacing:.15em}
+.active-art__poster{position:absolute;inset:15% 23% 8% 16%;background:linear-gradient(155deg,#a7a1bf,#f8ecf8 56%,#54577d);border-radius:2px 2px 60px 8px;transform:rotate(-8deg);box-shadow:25px 25px 55px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#25255a}
+.active-art__poster>span{font-size:clamp(48px,6vw,91px);font-weight:850;line-height:.9;letter-spacing:-.1em}
+.active-art__poster strong{font-size:clamp(19px,2.7vw,41px);letter-spacing:-.08em}
+.active-art__poster em{font-size:clamp(8px,.88vw,12px);margin-top:10px;font-style:normal}
+.active-art__sizes{display:flex;gap:20px;margin-top:20px;font-size:12px;font-weight:700;border-top:1px solid #585b84;padding-top:14px}
+.active-art__secondary{position:absolute;right:4%;bottom:12%;background:#f8e9ea;padding:13px;transform:rotate(7deg);color:#3f3150;font-size:clamp(12px,1.4vw,18px);line-height:1.1}
+.active-art__secondary strong{font-weight:850}
+.fashion-art__window{position:absolute;inset:17% 8% 11%;background:#f4ede5;border:1px solid #bfb6a9;box-shadow:20px 25px 50px rgba(40,23,11,.22);display:flex;flex-direction:column;align-items:center;padding:4% 5%}
+.fashion-art__brand{font-weight:900;letter-spacing:.24em;font-size:clamp(17px,2vw,29px)}
+.fashion-art__menu{font-size:clamp(6px,.65vw,9px);letter-spacing:.18em;margin-top:2%}
+.fashion-art__products{width:100%;height:69%;display:grid;grid-template-columns:repeat(3,1fr);gap:2.8%;margin-top:5%}
+.fashion-art__products span{display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:7px;color:#f7ece1;font-size:clamp(6px,.65vw,10px);font-weight:700;letter-spacing:.05em;background:linear-gradient(145deg,#7c7066,#241a19)}
+.fashion-art__products span:nth-child(2){background:linear-gradient(145deg,#c4aaa0,#4f3839)}
+.fashion-art__products span:nth-child(3){background:linear-gradient(145deg,#c2b1a2,#5c4f47)}
+.fashion-art__bottom{margin-top:auto;font-size:clamp(9px,.9vw,13px);letter-spacing:.14em;font-weight:600}
+.fashion-art__label{position:absolute;right:3%;bottom:4%;background:#231c19;color:#fff;padding:12px 17px;transform:rotate(-8deg);font-size:clamp(12px,1.3vw,18px);font-weight:850;letter-spacing:.1em;z-index:3}
+.fashion-art__label b{font-size:8px;font-weight:500;letter-spacing:0}
+.beauty-art__tiles{position:absolute;inset:16% 9% 6%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;transform:rotate(-4deg)}
+.beauty-art__tile{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:3px 8px 25px rgba(203,34,101,.15);overflow:hidden;padding:12px}
+.beauty-art__tile--a{background:#fff9fb;color:#ea0064}
+.beauty-art__tile--a em{font-size:clamp(65px,9vw,130px);font-style:normal;font-weight:850;letter-spacing:-.16em}
+.beauty-art__tile--a small{font-size:13px;letter-spacing:.23em}
+.beauty-art__tile--b{background:#ed0064;color:#fff}
+.beauty-art__tile--b b,.beauty-art__tile--c b{font-size:clamp(22px,3.1vw,49px);line-height:.9;letter-spacing:-.07em}
+.beauty-art__tile--c{background:#ffe8f0;color:#d5005d}
+.beauty-art__tile--d{background:#e6a8c3;color:#fff}
+.beauty-art__tile--d em{font-style:normal;font-size:clamp(50px,8vw,105px);font-weight:800;letter-spacing:-.12em}
+.beauty-art__tile span{font-size:clamp(7px,.7vw,11px);letter-spacing:.1em;margin-top:9px}
+.security-art__headline{position:absolute;left:9%;top:22%;font-size:clamp(44px,6vw,94px);font-weight:900;line-height:.86;letter-spacing:-.08em}
+.security-art__device{position:absolute;right:10%;top:24%;width:38%;aspect-ratio:1;display:grid;place-items:center;border-radius:40px;background:linear-gradient(145deg,#323638,#080a0b);transform:rotate(14deg);box-shadow:0 30px 48px rgba(0,0,0,.56),inset 0 2px 5px rgba(255,255,255,.24);border:5px solid #333}
+.security-art__lens{width:65%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#1d56a4 0%,#030711 26%,#31425e 37%,#04040c 43%,#737375 51%,#060606 59%);display:grid;place-items:center;box-shadow:0 0 10px #000,0 0 0 12px #212427}
+.security-art__lens span{width:22%;height:22%;border-radius:50%;background:radial-gradient(circle at 20% 20%,#5bc8fb,#111c40);filter:blur(2px)}
+.security-art__guide{position:absolute;bottom:8%;left:8%;font-size:clamp(8px,.95vw,13px);font-weight:700;letter-spacing:.07em}
+.crm-art__dashboard{position:absolute;inset:16% 13% 12%;background:#16131b;border:8px solid rgba(255,255,255,.16);border-radius:15px;box-shadow:19px 24px 44px rgba(80,12,0,.3);transform:rotate(-6deg);padding:6%;display:flex;flex-direction:column;gap:10%}
+.crm-art__top{display:flex;justify-content:space-between;align-items:center;font-size:clamp(10px,1.4vw,18px);letter-spacing:.08em}
+.crm-art__top strong{font-size:clamp(29px,4vw,60px);letter-spacing:-.06em;color:#ff8c22}
+.crm-art__columns{display:grid;grid-template-columns:1fr 1fr;gap:12%;height:59%}
+.crm-art__columns div{display:flex;flex-direction:column;gap:7px}
+.crm-art__columns strong{font-size:clamp(10px,1.2vw,16px);color:#ef7d14}
+.crm-art__columns span{height:22%;border-radius:5px;background:linear-gradient(90deg,#fa7820,#85320e)}
+.crm-art__columns span:nth-of-type(2){width:65%}
+.crm-art__columns span:nth-of-type(3){width:87%}
+.crm-art__foot{font-size:clamp(8px,1vw,13px);font-weight:700}
+.crm-art__floating{position:absolute;right:2%;bottom:10%;padding:12px 16px;transform:rotate(8deg);background:#ffad25;color:#1c141c;font-size:clamp(13px,2vw,27px);font-weight:800;letter-spacing:-.055em;line-height:1}
+.crm-art__floating b{color:#fff}
+.materials-art__sheet{position:absolute;width:47%;height:67%;top:16%;border-radius:5px;padding:8% 5% 5%;box-shadow:8px 22px 45px rgba(0,0,0,.26);display:flex;flex-direction:column;justify-content:space-between}
+.materials-art__sheet:before{content:"";width:100%;height:42%;background:repeating-linear-gradient(0deg,transparent 0 11px,currentColor 11px 12px);opacity:.22}
+.materials-art__sheet b{font-size:clamp(23px,3.4vw,48px);font-weight:850;letter-spacing:-.065em;line-height:1}
+.materials-art__sheet span{font-size:clamp(8px,.75vw,12px);font-weight:700;letter-spacing:.07em}
+.materials-art__sheet--a{left:9%;background:#f0f7ff;color:#002d65;transform:rotate(-18deg)}
+.materials-art__sheet--b{left:32%;top:18%;background:#d72d31;color:#fff;transform:rotate(4deg);z-index:2}
+.materials-art__sheet--c{left:49%;top:14%;background:#f2d7d6;color:#6a0e21;transform:rotate(19deg);z-index:1}
+@media(max-width:600px){
+ .bespoke-art__small{font-size:9px}
+ .sport-art__headline{font-size:63px}
+ .sport-art__metric strong{font-size:45px}
+ .active-art__poster>span{font-size:60px}
+ .active-art__poster strong{font-size:24px}
+ .beauty-art__tile--a em{font-size:67px}
+ .beauty-art__tile--d em{font-size:62px}
+ .beauty-art__tile--b b,.beauty-art__tile--c b{font-size:27px}
+ .security-art__headline{font-size:49px}
+ .crm-art__top strong{font-size:37px}
+ .materials-art__sheet b{font-size:25px}
+}

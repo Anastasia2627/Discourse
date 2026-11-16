@@ -386,3 +386,9 @@ body.case-document .wide{width:min(1350px,calc(100% - 90px));margin-inline:auto}
  .case-hero{padding-top:60px}
 }
 @media(prefers-reduced-motion:reduce){.work-art__image,.portfolio-card{transition:none!important}}
+
+/* The originals are the proof: the image appears only if the file exists. */
+.case-proof{display:block;max-width:min(100%,1060px);margin:70px auto 0;padding:0}
+.case-proof[hidden]{display:none!important}
+.case-proof img{display:block;width:100%;height:auto;max-width:100%;border-radius:7px;box-shadow:0 20px 45px rgba(0,0,0,.24)}
+@media(max-width:640px){.case-proof{margin-top:38px}.case-proof img{border-radius:3px}}

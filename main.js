@@ -115,10 +115,13 @@
   }
 
 
-  // Editorial reveal animations never hide content if script or observer is unavailable.
+  // Sections remain visible when scripting is unavailable or motion is reduced.
   if (!motionReduced && 'IntersectionObserver' in window) {
-    document.querySelectorAll('[data-reveal]').forEach(function (el) {
-      el.classList.add('is-in-view');
+    var targets = Array.from(document.querySelectorAll('[data-reveal]'));
+    targets.forEach(function (target) {
+      if (target.getBoundingClientRect().top < window.innerHeight * .85) {
+        target.classList.add('is-in-view');
+      }
     });
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -127,10 +130,9 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { rootMargin:'0px 0px -10% 0px', threshold:.08 });
-    var targets = document.querySelectorAll('[data-reveal]');
+    }, { rootMargin:'0px 0px -8% 0px', threshold:.04 });
+    document.documentElement.classList.add('motion-ready');
     targets.forEach(function (target) { observer.observe(target); });
-    // Do not apply initial hiding: preserves content visibility during navigation and loads.
   }
 
   // Small, GPU-only depth shift for the custom acrylic form, bounded to its section.
@@ -153,6 +155,27 @@
       object.style.setProperty('--object-x','0px');
       object.style.setProperty('--object-y','0px');
     });
+  }
+
+  // A light, non-interactive progress line for long-form reading.
+  var progress = document.getElementById('reading-progress');
+  if (progress) {
+    var pending = false;
+    var updateProgress = function () {
+      pending = false;
+      var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      var ratio = Math.max(0, Math.min(1, window.scrollY / max));
+      progress.style.transform = 'scaleX(' + ratio.toFixed(4) + ')';
+    };
+    var requestProgress = function () {
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(updateProgress);
+      }
+    };
+    window.addEventListener('scroll', requestProgress, {passive:true});
+    window.addEventListener('resize', requestProgress, {passive:true});
+    updateProgress();
   }
 
   var year = document.getElementById('copyright-year');

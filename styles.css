@@ -642,3 +642,5 @@ html.motion-ready [data-reveal].is-in-view { opacity:1; transform:translateY(0);
   .sky__plate--front, .markets__circle--one::after, .sky__object-flash { animation:none!important; }
   html.motion-ready [data-reveal]:not(.is-in-view) { opacity:1; transform:none; }
 }
+
+.reading-progress { position:fixed; z-index:100; left:0; top:0; width:100%; height:3px; background:linear-gradient(90deg,#86c7ff,#1143ee); transform-origin:left center; transform:scaleX(0); pointer-events:none; }

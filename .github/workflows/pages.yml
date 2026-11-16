@@ -27,6 +27,14 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Unpack case media if uploaded
+        run: |
+          shopt -s nullglob
+          for archive in public/assets/cases/*.zip; do
+            unzip -q -o "$archive" -d public/assets/cases
+            rm "$archive"
+          done
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
